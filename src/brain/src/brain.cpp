@@ -476,15 +476,15 @@ void Brain::lowStateCallback(const booster_interface::msg::LowState &msg)
 
     log->setTimeNow();
 
-    log->log("low_state_callback/imu/rpy/roll", rerun::Scalar(msg.imu_state.rpy[0]));
-    log->log("low_state_callback/imu/rpy/pitch", rerun::Scalar(msg.imu_state.rpy[1]));
-    log->log("low_state_callback/imu/rpy/yaw", rerun::Scalar(msg.imu_state.rpy[2]));
-    log->log("low_state_callback/imu/acc/x", rerun::Scalar(msg.imu_state.acc[0]));
-    log->log("low_state_callback/imu/acc/y", rerun::Scalar(msg.imu_state.acc[1]));
-    log->log("low_state_callback/imu/acc/z", rerun::Scalar(msg.imu_state.acc[2]));
-    log->log("low_state_callback/imu/gyro/x", rerun::Scalar(msg.imu_state.gyro[0]));
-    log->log("low_state_callback/imu/gyro/y", rerun::Scalar(msg.imu_state.gyro[1]));
-    log->log("low_state_callback/imu/gyro/z", rerun::Scalar(msg.imu_state.gyro[2]));
+    log->log("low_state_callback/imu/rpy/roll", rerun::archetypes::Scalars(msg.imu_state.rpy[0]));
+    log->log("low_state_callback/imu/rpy/pitch", rerun::archetypes::Scalars(msg.imu_state.rpy[1]));
+    log->log("low_state_callback/imu/rpy/yaw", rerun::archetypes::Scalars(msg.imu_state.rpy[2]));
+    log->log("low_state_callback/imu/acc/x", rerun::archetypes::Scalars(msg.imu_state.acc[0]));
+    log->log("low_state_callback/imu/acc/y", rerun::archetypes::Scalars(msg.imu_state.acc[1]));
+    log->log("low_state_callback/imu/acc/z", rerun::archetypes::Scalars(msg.imu_state.acc[2]));
+    log->log("low_state_callback/imu/gyro/x", rerun::archetypes::Scalars(msg.imu_state.gyro[0]));
+    log->log("low_state_callback/imu/gyro/y", rerun::archetypes::Scalars(msg.imu_state.gyro[1]));
+    log->log("low_state_callback/imu/gyro/z", rerun::archetypes::Scalars(msg.imu_state.gyro[2]));
 }
 
 void Brain::imageCallback(const sensor_msgs::msg::Image &msg)
@@ -533,17 +533,17 @@ void Brain::headPoseCallback(const geometry_msgs::msg::Pose &msg)
         log->log("head_to_base/text",
                  rerun::TextLog("x: " + to_string(x) + " y: " + to_string(y) + " z: " + to_string(z) + " roll: " + to_string(roll) + " pitch: " + to_string(pitch) + " yaw: " + to_string(yaw)));
         log->log("head_to_base/x",
-                 rerun::Scalar(x));
+                 rerun::archetypes::Scalars(x));
         log->log("head_to_base/y",
-                 rerun::Scalar(y));
+                 rerun::archetypes::Scalars(y));
         log->log("head_to_base/z",
-                 rerun::Scalar(z));
+                 rerun::archetypes::Scalars(z));
         log->log("head_to_base/roll",
-                 rerun::Scalar(roll));
+                 rerun::archetypes::Scalars(roll));
         log->log("head_to_base/pitch",
-                 rerun::Scalar(pitch));
+                 rerun::archetypes::Scalars(pitch));
         log->log("head_to_base/yaw",
-                 rerun::Scalar(yaw));
+                 rerun::archetypes::Scalars(yaw));
     }
 }
 

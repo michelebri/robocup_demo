@@ -727,11 +727,11 @@ NodeStatus SelfLocate::tick()
     {
         brain->log->setTimeNow();
         brain->log->log("locator/time",
-                        rerun::Scalar(res.msecs));
+                        rerun::archetypes::Scalars(res.msecs));
         brain->log->log("locator/residual",
-                        rerun::Scalar(res.residual));
+                        rerun::archetypes::Scalars(res.residual));
         brain->log->log("locator/result",
-                        rerun::Scalar(res.code));
+                        rerun::archetypes::Scalars(res.code));
         brain->log->log("locator/constraints",
                         rerun::TextLog(
                             "xMin: " + to_string(xMin) + " " +
